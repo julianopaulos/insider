@@ -11,7 +11,7 @@ import { Feather } from '@expo/vector-icons';
 
 import { ContainerLogo, Logo, ContainerContent, Title, SubTitle, Input, ContainerInput, BoxIcon, ButtonLink, ButtonLinkText } from './styles';
 import api from '../../services/api';
-
+import { saveLink } from '../../utils/storeLinks';
 
 
 
@@ -28,8 +28,9 @@ export default function Home() {
             const response = await api.post('/shorten', {
                 long_url: input
             });
-
+            //after the 200 code from request, save the short link in local storage
             setData(response.data);
+            saveLink('links', response.data);
             setModalVisible(!modalVisible);
         }catch(error){
             alert('deu ruim');

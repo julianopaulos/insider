@@ -17,3 +17,18 @@ export const Title = styled.Text`
 export const ListLinks = styled.FlatList`
     
 `;
+
+export const ContainerEmpty = styled.View`
+    margin-top: 15%;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+`;
+
+export const WarningText = styled.Text`
+    font-size: 17px;
+    color: #fff;
+    margin-right: 5px;  
+`;
+
+//ContainerEmpty, WarningText
